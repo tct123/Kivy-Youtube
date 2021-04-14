@@ -19,14 +19,14 @@ screen_helper = """
         MDList:
 
             OneLineListItem:
-                text: "Аудио"
+                text: "Audio"
                 on_press:
                     root.nav_drawer.set_state("close")
                     root.screen_manager.current = "menu"
 
             OneLineListItem:
                 right_icon: 'folder'
-                text: "Библиотека"
+                text: "Bibliothek"
                 on_press:
                     root.nav_drawer.set_state("close")
                     root.screen_manager.current = "profile"
@@ -51,21 +51,21 @@ Screen:
             name: 'menu'
             
             MDLabel: 
-                text: "Конверетер в аудио по ссылке"
+                text: "Konverter zu Audio per Link"
                 pos_hint:{'center_x':0.5,'center_y':0.6}
                 halign: "center"
                 text_color: 0, 0, 1, 1
             
             MDTextFieldRound:
                 id: input_name
-                hint_text: 'Ваша ссылка'
+                hint_text: 'Dein Link'
                 pos_hint:{'center_x':0.5,'center_y':0.5}
                 color_mode:'custom'
                 line_color_focus: 0.43, 0.82, 0.83, 0.6
                 size_hint: .4, .05
     
             MDRectangleFlatButton:
-                text: 'Скачать'
+                text: 'Herunterladen'
                 pos_hint: {'center_x':0.5,'center_y':0.3}
                 on_press: 
                     root.ButtonFunction()
@@ -100,7 +100,7 @@ class MainScreenManager (ScreenManager):  # This gonna be the root widget
     def ButtonFunction(self):
         self.current = 'profile'
         print(self.input_name.text)
-        self.label_.text = 'Скачано'
+        self.label_.text = 'Heruntergeladen'
 
 
 class MenuScreen (Screen):
